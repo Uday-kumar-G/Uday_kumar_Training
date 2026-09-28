@@ -12,7 +12,6 @@
 		$dbname = "FACEBOOK";
 				// Connect to MySQL
 		$conn = new mysqli($servername, $username, $password, $dbname);
-
 				// Check connection
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
@@ -25,8 +24,7 @@
 		// SQL query
 		$sql = "SELECT * FROM USER";
 		$sql1 = "SELECT * FROM FRIEND"; 
-		$sql2="SELECT * FROM WALL order by POSTING_DATE desc";
-				
+		$sql2="SELECT * FROM WALL order by POSTING_DATE desc";		
 		$result = $conn->query($sql);
 				// $result1 = $conn->query($sql);
 		$result_FRND_ = $conn->query($sql1);        
@@ -58,7 +56,7 @@
 		<textarea type="text-area" id="post" class="form-input" name="post" placeholder="Write your content to post here..." required></textarea>
 		<br>
 		<button id="save" class="form-button" type="submit">
-		Post
+		    Post
 		</button>
 		<p id="message" class="form-message"></p>
 	</form>

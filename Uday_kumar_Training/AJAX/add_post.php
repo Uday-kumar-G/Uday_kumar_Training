@@ -20,6 +20,7 @@
 		$stmt->bind_param("s", $post);
 		if ($stmt->execute() and strlen($post) > 0) {
 			echo "Post created successfully";
+			// set_time_limit(10000);
 		}
 		else {
 			echo "Failed to create post";
@@ -31,5 +32,3 @@
 	<script src="wall.js"></script>
 </body>
 </html>
-
-	
