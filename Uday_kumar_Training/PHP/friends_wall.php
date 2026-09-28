@@ -1,39 +1,3 @@
-<?php
-
-session_start();
-require_once "database.php";
-if (!isset($_GET["id"])) {
-    die("User ID not provided");
-}
-
-$id = (int) $_GET["id"];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $post = trim($_POST["post"]);
-
-    if ($post != "") {
-
-        $sql = "INSERT INTO WALL
-                	(USER_ID, POSTING_DATE, POST)
-                VALUES 
-					(?, NOW(), ?)";
-
-        $statement = $conn->prepare($sql);
-
-        $statement->bind_param("is", $id, $post);
-
-        if ($statement->execute()) {
-
-            $_SESSION["message"] = "Post created successfully";
-
-            header("Location: home.php?id=" . $id);
-            exit();
-        }
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>	
 			<div class="right">
 				<!-- //FOR THE CREATE POST -->
-				<h2 id="create-post" class="form-title">Create Post</h2>
+				<!-- <h2 id="create-post" class="form-title">Create Post</h2>
 					<form method="POST" >
 						<textarea type="text-area" id="post" class="form-input" name="post" placeholder="Write your content to post here..." required></textarea>
 						<br>
@@ -164,27 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						</button>
 						<p id="message" class="form-message"></p>
 					</form>
-					<?php
-						if (isset($_SESSION["message"])) {
-							echo "<p id='post-message'>"
-								. $_SESSION["message"] .
-								"</p>";
-							unset($_SESSION["message"]);
-						}
-					?>
-					<script>
-						setTimeout(function () {
-
-							let message = document.getElementById("post-message");
-
-							if (message) {
-								message.style.display = "none";
-							}
-
-						}, 2000);
-					</script>
-					
-					<h3 id="post-title">Post's</h3>
+					 -->
+				<h3 id="post-title">Post's</h3>
 					<table class="post-table" id="my-table">
 						<tr>
 							<th>Date</th>
@@ -195,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							if($sqlPost->num_rows>0)
 							{
 								while($post=$sqlPost->fetch_assoc()){
-									$d=date("d.m.Y",strtotime($post["POSTING_DATE"]));
+									$d=date("y.m.d",strtotime($post["POSTING_DATE"]));
 									echo "<tr>";
 									echo "<td>" .$d. "</td>";
 									echo "<td>" . $post["POST"] . "</td>";
@@ -211,5 +156,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 		</div>
 	</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+    <script src="wall.js"></script>
 </body>
 </html>	

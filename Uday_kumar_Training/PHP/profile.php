@@ -10,30 +10,23 @@
 <div class="content">
 	<!-- To Establishing the database connection and checking here-->
 	<?php
-		$servername = "localhost";
-		$username = "uday";
-		$password = "Root@1234";
-		$dbname = "FACEBOOK";
-
-		// Connect to MySQL
-		$conn = new mysqli($servername, $username, $password, $dbname);
-
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
+    // database connection
+        require_once "database.php";
 		if (!isset($_GET["id"])){
 			die("User ID not specified.");
 		}
 		$id = $_GET["id"];
-		$sql = "SELECT USER_ID, NAME, EMAIL, ADDRESS, PHONE
-				FROM USER
-				WHERE USER_ID = ?";
+		$sql = "SELECT 
+                    USER_ID, NAME, EMAIL, ADDRESS, PHONE
+				FROM 
+                    USER
+				WHERE 
+                    USER_ID = ?";
 		$statement = $conn->prepare($sql);
 		$statement->bind_param("i",$id);
 		$statement->execute();
-		$profile_result = $statement->get_result();
-		$user = $profile_result->fetch_assoc();
+		$profileResult = $statement->get_result();
+		$user = $profileResult->fetch_assoc();
 		if(!$user){
 			die("User not found.");
 		}
@@ -49,8 +42,8 @@
 		<a href="friends.php?id=<?php echo $id; ?>">FRIENDS</a>
 	</button><br>
 	<?php
-		$current_user_id = 1;
-		if ($id == $current_user_id) {
+		$currentUserId = 1;
+		if ($id == $currentUserId) {
 			echo '<button class="my-update">
 				<a href="update.php?id=1">
 					Update
@@ -70,22 +63,25 @@
 			<th>Post</th>
 		</tr>
 		<?php
-			$sql_post="SELECT POST,POSTING_DATE 
-						FROM WALL 
-						WHERE USER_ID=? 
-						ORDER BY POSTING_DATE DESC";
-			$post_statement = $conn->prepare($sql_post);
-			$post_statement->bind_param("i",$id);
-			$post_statement->execute();
-			$post_result = $post_statement->get_result();
-			while($post=$post_result->fetch_assoc()){
+			$sqlPost=" SELECT 
+                            POST,POSTING_DATE 
+						FROM 
+                            WALL 
+						WHERE 
+                            USER_ID=? 
+						ORDER BY 
+                            POSTING_DATE DESC";
+			$postStatement = $conn->prepare($sqlPost);
+			$postStatement->bind_param("i",$id);
+			$postStatement->execute();
+			$postResult = $postStatement->get_result();
+			while($post=$postResult->fetch_assoc()){
 				$d=date("y.m.d",strtotime($post["POSTING_DATE"]));
 				echo "<tr>";
 				echo "<td>" .$d. "</td>";
 				echo "<td>" . $post["POST"] . "</td>";
 				echo "</tr>";
 			}
-	
 			$conn->close();
 		?>
 	</table>
