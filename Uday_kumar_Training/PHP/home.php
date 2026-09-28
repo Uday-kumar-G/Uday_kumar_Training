@@ -1,3 +1,39 @@
+<?php
+
+session_start();
+require_once "database.php";
+if (!isset($_GET["id"])) {
+    die("User ID not provided");
+}
+
+$id = (int) $_GET["id"];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $post = trim($_POST["post"]);
+
+    if ($post != "") {
+
+        $sql = "INSERT INTO WALL
+                	(USER_ID, POSTING_DATE, POST)
+                VALUES 
+					(?, NOW(), ?)";
+
+        $statement = $conn->prepare($sql);
+
+        $statement->bind_param("is", $id, $post);
+
+        if ($statement->execute()) {
+
+            $_SESSION["message"] = "Post created successfully";
+
+            header("Location: home.php?id=" . $id);
+            exit();
+        }
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,23 +165,24 @@
 						<p id="message" class="form-message"></p>
 					</form>
 					<?php
-						require_once "database.php";
-						$post = $_POST["post"];
-						$sql = "INSERT INTO 
-									WALL (USER_ID, POSTING_DATE, POST)
-								VALUES 
-									(1, NOW(), ?)";
-						$statement = $conn->prepare($sql);
-						$statement->bind_param("s", $post);
-						if ($statement->execute() and strlen($post) > 0) {
-							echo "Post created successfully";
-							set_time_limit(10000);
+						if (isset($_SESSION["message"])) {
+							echo "<p id='post-message'>"
+								. $_SESSION["message"] .
+								"</p>";
+							unset($_SESSION["message"]);
 						}
-						else {
-							echo "Failed to create post";
-						}
-						$conn->close();
 					?>
+					<script>
+						setTimeout(function () {
+
+							let message = document.getElementById("post-message");
+
+							if (message) {
+								message.style.display = "none";
+							}
+
+						}, 2000);
+					</script>
 					
 					<h3 id="post-title">Post's</h3>
 					<table class="post-table" id="my-table">
@@ -158,7 +195,7 @@
 							if($sqlPost->num_rows>0)
 							{
 								while($post=$sqlPost->fetch_assoc()){
-									$d=date("y.m.d",strtotime($post["POSTING_DATE"]));
+									$d=date("d.m.Y",strtotime($post["POSTING_DATE"]));
 									echo "<tr>";
 									echo "<td>" .$d. "</td>";
 									echo "<td>" . $post["POST"] . "</td>";
