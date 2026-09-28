@@ -140,7 +140,7 @@
 							if($sqlPost->num_rows>0)
 							{
 								while($post=$sqlPost->fetch_assoc()){
-									$d=date("y.m.d",strtotime($post["POSTING_DATE"]));
+									$d=date("d.m.Y",strtotime($post["POSTING_DATE"]));
 									echo "<tr>";
 									echo "<td>" .$d. "</td>";
 									echo "<td>" . $post["POST"] . "</td>";
