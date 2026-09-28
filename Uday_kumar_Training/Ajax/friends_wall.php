@@ -119,7 +119,7 @@
 			</div>	
 			<div class="right">
 				<!-- //FOR THE CREATE POST -->
-				<h2 id="create-post" class="form-title">Create Post</h2>
+				<!-- <h2 id="create-post" class="form-title">Create Post</h2>
 					<form method="POST" >
 						<textarea type="text-area" id="post" class="form-input" name="post" placeholder="Write your content to post here..." required></textarea>
 						<br>
@@ -128,8 +128,8 @@
 						</button>
 						<p id="message" class="form-message"></p>
 					</form>
-					
-					<h3 id="post-title">Post's</h3>
+					 -->
+				<h3 id="post-title">Post's</h3>
 					<table class="post-table" id="my-table">
 						<tr>
 							<th>Date</th>
