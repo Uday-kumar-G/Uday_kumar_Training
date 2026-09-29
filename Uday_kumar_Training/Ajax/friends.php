@@ -40,7 +40,7 @@
 			$dbStatements->execute();
 			$myFrnds = $dbStatements->get_result();
 			while ($frnds = $myFrnds->fetch_assoc()) {
-				echo '<a class="my-friend" id="friend-link" href="profile.php?id='
+				echo '<a class="my-friend" id="friend-link" href="friends_wall.php?id='
 					. $frnds["USER_ID"]
 					. '">'
 					. $frnds["NAME"]

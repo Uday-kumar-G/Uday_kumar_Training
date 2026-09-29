@@ -3,6 +3,10 @@
 <head>
 	<title>Home page</title>
 	<link rel="stylesheet" href="home.css">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 	<div class="full-body">
@@ -123,9 +127,13 @@
 					<form method="POST" >
 						<textarea type="text-area" id="post" class="form-input" name="post" placeholder="Write your content to post here..." required></textarea>
 						<br>
-						<button id="save" class="form-button" type="submit">
+						<button 
+						id="save" 
+						class="form-button" 
+						type="submit">
 							Post
 						</button>
+						
 						<p id="message" class="form-message"></p>
 					</form>
 					
@@ -156,8 +164,12 @@
 			</div>
 		</div>
 	</div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
-    <script src="wall.js"></script>
 </body>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="wall.js"></script>
 </html>	
