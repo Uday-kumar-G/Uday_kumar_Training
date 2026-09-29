@@ -1,0 +1,345 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face{
+	font-family: 'facebook';
+	src: url("/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/facebook-sans/FacebookSansRegular.ttf");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@media (min-width: 1025px) {
+	
+	.quotation {
+		margin-top: 126%;
+		width: 280px;
+		font-size: 30px;
+		font-family: 'facebook';
+		margin-bottom: 8%;
+	}
+
+	.quotation h1 {
+		line-height: 67px;
+	}
+
+	.left-left {
+		width: 33%;
+	}
+
+	.make-highlight {
+		color: #0866ff;
+	}
+
+	#login_page_logo {
+		padding: 1px;
+	}
+
+	#login_page_logo img {
+		height: 60px;
+		width: 60px;
+		margin-top: 13%;
+		margin-left: 1.5%;
+	}
+
+	.login-page-image {
+		width: 65%;
+		/* margin-right: 100px; */
+	}
+
+	.login-page-image img {
+		width: 110%;
+		height: 90%;
+		/* padding: 10%; */
+		/* margin: 11%; */
+	}
+
+	.mypage-body {
+		display: flex;
+		/* padding: 10px; */
+		/* margin: 10px; */
+	}
+
+	.left-part {
+		margin-left: 40px;
+		width: 65%;
+		display: flex;
+		border-right: 2px solid rgb(214, 213, 213);
+		background-image: url("https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp");
+		background-size: cover;
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: 80% 100%;
+	}
+
+	.login {
+		align-items: center;
+		margin-top: 11%;
+		margin-left: 5px;
+		/* border: 1px solid black; */
+		padding: 20px;
+		text-align: center;
+		width: 35%;
+	}
+
+	.login p {
+		text-align: left;
+		margin-left: 7%;
+		font-family: 'facebook';
+		color: #111112;
+		font-weight: bolder;
+		letter-spacing: 1px;
+	}
+
+	.login a {
+		align-items: center;
+		text-decoration: none;
+		color: #111112;
+		margin-left: 20px;
+		font-family: 'facebook';
+	}
+
+	#login_name {
+		width: 89%;
+		padding: 16px 10px;
+		border: 1px solid rgb(140, 137, 137);
+		border-radius: 15px;
+		margin: 0px 10px 10px 10px;
+	}
+	#login_name :hover{
+		border: black ;
+	}
+
+	#login_password {
+		padding: 16px 10px;
+		width: 89%;
+		border: 1px solid rgb(121, 119, 119);
+		border-radius: 15px;
+		margin: 10px;  
+	}
+	#login_password :hover{
+		border: black ;
+	}
+
+	input::placeholder {
+		transition: 0.2s;
+	}
+
+	input:focus::placeholder {
+		transform: translateY(-12px);
+		font-size: 11px;
+	}
+
+	.login-button {
+		width: 89%;
+		border-radius: 30px;
+		padding: 12px;
+		margin: 10px;
+		background-color: #0064E0;
+		color: azure;
+		font-size: 17px;
+	}
+
+	.create-account-button {
+		width: 89%;
+		border: 1px solid blue;
+		border-radius: 30px;
+		padding: 10px;
+		margin: 50px 10px 10px 10px;
+		font-size: 15px;
+		color: blue;
+		background-color: white;
+	}
+
+	.forgot-password-button {
+		width: 89%;
+		border-radius: 30px;
+		padding: 10px;
+		margin: 10px 10px 10px 10px;
+		font-size: 17px;
+		color: rgb(24, 24, 24);
+		background-color: white;
+		border: none;
+	}
+
+	.forgot-password-button:hover {
+		background-color: rgb(241, 241, 241);
+		/* border: white; */
+	}
+
+	.my-footer {
+		margin: 20px 0px 0px 20%;
+		/* text-align:center; */
+		/* justify-content: left; */
+		align-items: center;
+		padding: 10px;
+		line-height: 30px;
+	}
+
+	.my-footer a {
+		padding: 5px;
+		text-decoration: none;
+		color: black;
+		
+	}
+}
+
+@media  (max-width: 1024px) {
+	/* .quotation {
+		margin-top: 170%;
+		width: 280px;
+		font-size: 30px;
+		font-family: 'facebook';
+
+	} */
+
+	/* .quotation h1 {
+		line-height: 66px;
+	} */
+
+	/* .make-highlight {
+		color: #0000ff;
+	} */
+
+	#login_page_logo {
+		align-items: center;
+		border-bottom: 1px solid #8e8e91;
+		padding: 5%;
+	
+		
+	}
+	#login_page_logo img {
+		height: 60px;
+		width: 60px;
+		margin-top: 10%;
+		margin-left: 47%;
+		align-items: center;
+		
+	}
+	/* .login-page-image {
+		width: 67%;
+		margin-right: 100px;
+	} */
+/* 
+	.login-page-image img {
+		width: 100%;
+		height: 70%;
+		padding: 0px 0px 0px 0px;
+		margin-top: 20%;
+	} */
+
+	/* .mypage-body {
+		display: flex;
+		/* padding: 10px; */
+		/* margin: 10px; */
+	/* } */ 
+
+	/* .left-part {
+		padding-left: 40px;
+		width: 0%;
+		display: flex;
+		border-right: 2px solid rgb(214, 213, 213);
+	} */
+
+	.login {
+		align-items: center;
+		margin-top: 11%;
+		margin-left: 5px;
+		/* border: 1px solid black; */
+		padding: 20px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.login h3 {
+		text-align: left;
+		margin-left: 25px;
+		font-family: 'facebook';
+	}
+
+	.login a {
+		align-items: center;
+		text-decoration: none;
+		color: black;
+		margin-left: 20px;
+		font-family: 'facebook';
+	}
+
+	#login_name {
+		width: 70%;
+		padding: 10px 16px;
+		border: 1px solid rgb(140, 137, 137);
+		border-radius: 15px;
+		margin: 10px;
+	}
+
+	#login_password {
+		width: 70%;
+		padding: 10px 16px;
+		border: 1px solid rgb(121, 119, 119);
+		border-radius: 15px;
+		margin: 10px;
+		margin: 10px;
+	}
+
+	input::placeholder {
+		transition: 0.2s;
+	}
+
+	input:focus::placeholder {
+		transform: translateY(-12px);
+		font-size: 11px;
+	}
+
+	.login-button {
+		width: 90%;
+		border-radius: 30px;
+		padding: 12px;
+		margin: 10px;
+		background-color: rgb(69, 69, 254);
+		color: azure;
+		font-size: 17px;
+	}
+
+	.create-account-button {
+		width: 93%;
+		border: 1px solid blue;
+		border-radius: 30px;
+		padding: 15px;
+		margin: 50px 10px 10px 10px;
+		font-size: 15px;
+		color: blue;
+		background-color: white;
+	}
+
+	.forgot-password-button {
+		width: 93%;
+		border-radius: 30px;
+		padding: 15px;
+		margin: 10px 10px 10px 10px;
+		font-size: 17px;
+		color: rgb(24, 24, 24);
+		background-color: white;
+	}
+
+	.forgot-password-button:hover {
+		background-color: rgb(223, 223, 223);
+	}
+
+	.my-footer {
+		margin: 20px 0px 0px 20%;
+		/* text-align:center; */
+		/* justify-content: left; */
+		align-items: center;
+		padding: 10px;
+		line-height: 30px;
+	}
+
+	.my-footer a {
+		padding: 5px;
+		text-decoration: none;
+		color: black;
+	}
+}
