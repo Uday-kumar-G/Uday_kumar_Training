@@ -1,0 +1,58 @@
+#Photos_card{
+    width:100%;
+    height: 540px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin:5px 0;
+}
+#Photos_title-head{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+} 
+#Photos_title-head a{
+    text-decoration: none;
+}
+#Photos_title{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #080809;
+    font-weight: 600;
+    padding-left: 20px;
+}
+#see_photos_pro{
+    /* font-size: 17px; */
+    color: #0064d1;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+#see_photos_pro:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+    
+}
+#all_photos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* margin: 5px;     */
+}
+.my-photo{
+    width:149.98px;
+    height: 149.98px;
+    margin: 2px;
+    cursor: pointer;
+}
+.grid-photo{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
