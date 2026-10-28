@@ -11,9 +11,24 @@ if (!isset($_SESSION["id"])) {
 
 $id = $_SESSION["id"];
 
-$sql = "SELECT * FROM USER WHERE USER_ID = ?";
-$post_sql="SELECT * FROM WALL WHERE USER_ID in (SELECT F.FRIEND_ID FROM USER U LEFT JOIN FRIEND F ON U.USER_ID=F.USER_ID WHERE F.USER_ID=?)";
-
+$sql = "SELECT 
+			* 
+		FROM USER 
+		WHERE USER_ID = ?";
+$post_sql="SELECT
+            W.*
+        FROM
+            `USER` U
+        LEFT OUTER JOIN
+            FRIEND F
+        ON
+            U.USER_ID = F.USER_ID
+        LEFT OUTER JOIN
+            WALL W
+        ON
+            F.FRIEND_ID = W.USER_ID
+        WHERE
+            U.USER_ID = ?";
 $statement = $conn->prepare($sql);
 
 $statement->bind_param("i", $id);

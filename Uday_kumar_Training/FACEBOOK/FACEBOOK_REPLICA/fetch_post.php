@@ -11,8 +11,7 @@
 
 	$id = $_SESSION["id"];
 
-	$post_sql = "
-				SELECT 
+	$post_sql = "SELECT 
 					W.USER_ID, W.POST, W.POSTING_DATE,
 					U.NAME, U.PROFILE_PICTURE
 				FROM WALL W
