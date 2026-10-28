@@ -11,9 +11,17 @@ if (!isset($_SESSION["id"])) {
 
 $id = $_SESSION["id"];
 
-$sql = "SELECT * FROM USER WHERE USER_ID = ?";
-$post_sql="SELECT * FROM WALL WHERE USER_ID in (SELECT F.FRIEND_ID FROM USER U LEFT JOIN FRIEND F ON U.USER_ID=F.USER_ID WHERE F.USER_ID=?)";
-
+$sql = "SELECT 
+			* 
+		FROM 
+			USER 
+		WHERE USER_ID = ?";
+$post_sql="SELECT 
+				W.*
+			FROM WALL W
+			LEFT OUTER JOIN FRIEND F
+				ON W.USER_ID = F.FRIEND_ID
+			WHERE F.USER_ID = ?";
 $statement = $conn->prepare($sql);
 
 $statement->bind_param("i", $id);
@@ -44,14 +52,13 @@ $post_profil=$user["PROFILE_PICTURE"];
 
 ?>
 <head>
-	<link rel="stylesheet" href="all_photos.css">
+	<link rel="stylesheet" href="/CSS/all_photos.css">
 </head>
 <div id="all_photos_card">
 	<div id="all_photos_title-head">
 		<span id="Photos_title">
 			Photos
 		</span>
-		
 	</div>
 	<div>
 		<div id="photo_name_tab">

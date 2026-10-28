@@ -1,260 +1,251 @@
 
- #centerModal .modal-dialog {
-    width: 500px;
-    max-width: calc(100vw - 30px);
+#centerModal .modal-dialog {
+	width: 500px;
+	max-width: calc(100vw - 30px);
 }
 
 #centerModal .modal-content {
-    height: 470px;
-    max-height: calc(100dvh - 30px);
-    border-radius: 12px;
+	height: 470px;
+	max-height: calc(100dvh - 30px);
+	border-radius: 12px;
 }
 
 #centerModal .modal-body {
-    overflow-y: auto;
+	overflow-y: auto;
 }
 .modal-body{
-    margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 /* For Bootstrap Modal */
 .modal-backdrop.show {
-    opacity: 0.1 !important;
+	opacity: 0.1 !important;
 }
 
 /* For Bootstrap Offcanvas */
 .offcanvas-backdrop.show {
-    opacity: 0.1 !important;
+	opacity: 0.1 !important;
 }
 #my-wall {
-    /* border: 1px solid #6e6d6c; */
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    height:123px;
-    width: 680px;
-    gap: 8px;
-    /* width: 100%; */
-    /* margin: 100px; */
-    padding: 12px 16px 0 10px;
-    padding-left: 22px;
-    box-shadow: 0 2px 2px #cfcdcd;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	height:123px;
+	width: 680px;
+	gap: 8px;
+	padding: 12px 16px 0 10px;
+	padding-left: 22px;
+	box-shadow: 0 2px 2px #cfcdcd;
 } 
 #my-wall a{
-    text-decoration: none;
-    color: #080809;
+	text-decoration: none;
+	color: #080809;
 }
 
 .my-porfile {
-    margin-left: -10px;
+	margin-left: -10px;
 }
 
 .my-top-icon {
-    margin-left: 8px;
+	margin-left: 8px;
 }
 .top,.bottom{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
 }
 .top{
-    height: 40px;
-    width: 648px;
-    padding: 0;
+	height: 40px;
+	width: 648px;
+	padding: 0;
 }
 #my-post-input {
-    width: 180%;
-    height: 40px;
-    border-radius: 20px;
-    /* border:1px solid #0866ff; */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    padding: 8px 12px;
-    background-color: #f0f2f5;
-    color: #65686c;
-    text-align:start;
-    margin-top: -8px;
+	width: 180%;
+	height: 40px;
+	border-radius: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	padding: 8px 12px;
+	background-color: #f0f2f5;
+	color: #65686c;
+	text-align:start;
+	margin-top: -8px;
 }
 #my-post-input span{
-    height: 22.2px;
+	height: 22.2px;
 }
 
 #my-post-input:hover {
-    background-color: #e2e5e9;
-    cursor: pointer;
+	background-color: #e2e5e9;
+	cursor: pointer;
 }
 #post-bottom-elements{
-    width: 648px;
-    justify-content: space-evenly;
-    /* gap: 20px; */
-    height: 40px;
-    margin-top: 2px;
-    border-top: 1px solid #cfcdcd;
-    padding-top: 10px;
+	width: 648px;
+	justify-content: space-evenly;
+	height: 40px;
+	margin-top: 2px;
+	border-top: 1px solid #cfcdcd;
+	padding-top: 10px;
 }
 .my-pointer1:hover{
 cursor: pointer;
 }
 .my-pointer:hover{
-    background-color: #eeeeee;
-    cursor: pointer;
-    
+	background-color: #eeeeee;
+	cursor: pointer;
+	
 }
 .top-icon{
-    width: 216px;
-    height: 40px;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+	width: 216px;
+	height: 40px;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
 }
 .top-icon span{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #65686c;
-    font-size: 15px;
-    font-weight: 600;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #65686c;
+	font-size: 15px;
+	font-weight: 600;
 }
 .modal-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 .modal-title{
-    color: #080809;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    /* text-align: center; */
-    margin-left: 40%;
+	color: #080809;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 40%;
 }
 #person_name{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #080809;
-    font-weight: 600;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #080809;
+	font-weight: 600;
 }
 #post_type_by_name{
-    height: 18px;
-    padding-bottom: 10px;
+	height: 18px;
+	padding-bottom: 10px;
 }
 #post_type{
-    display: flex;
+	display: flex;
 }
 .post-type-back{
-    background-color: #e2e5e9;
-    padding: 2px 8px;
-    margin: 1px 2px;
-    border-radius: 5px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
+	background-color: #e2e5e9;
+	padding: 2px 8px;
+	margin: 1px 2px;
+	border-radius: 5px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3px;
 }
 .post-type-back span{
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    text-align: center;
-    color: #080809;
-    /* height: 18px; */
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	text-align: center;
+	color: #080809;
 }
 #posting_detail{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin: 0 16px;
-    padding:0 0 16px 0 ;
-    height: 73px;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	margin: 0 16px;
+	padding:0 0 16px 0 ;
+	height: 73px;
 }
 #post_text {
-    width: 100%;
-    min-height: 120px;
-    resize: vertical;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	min-height: 120px;
+	resize: vertical;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 #post_text::placeholder{
-    font-size: 25px;
+	font-size: 25px;
 }
 #post_text:focus {
-    outline: none;
-    box-shadow: none;
+	outline: none;
+	box-shadow: none;
 }
 #ai_image{
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 #ai_image_left{
-    width: 95%;
+	width: 95%;
 }
 #ai_image_span img{
-    height: 38px;
-    width: 38px;
+	height: 38px;
+	width: 38px;
 }
 
 #post_media_display{
-    display: flex;
-    gap: 13px;
-    width: 100%;
+	display: flex;
+	gap: 13px;
+	width: 100%;
 }
 #post_media{
 
-    margin-top: 27px;
-    border: 0.2px solid rgb(203, 201, 201);
-    height: 58px;
-    width: 468px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
+	margin-top: 27px;
+	border: 0.2px solid rgb(203, 201, 201);
+	height: 58px;
+	width: 468px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
 }
 #add_post_text{
-    width: 47%;
-    margin-left:5% ;
+	width: 47%;
+	margin-left:5% ;
 }
 #add_post_text span{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #080809;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	color: #080809;
 }
 .post-icon{
-    align-items: center;
+	align-items: center;
 }
 
 #post_button{
-    width: 468px;
-    height: 36px;
-    /* border: 1px solid black; */
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 18px 0;
-    background-color: #0866ff;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    border: none;
+	width: 468px;
+	height: 36px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 18px 0;
+	background-color: #0866ff;
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	border: none;
 }
 
 #post_button:disabled {
-    background-color: #e4e6eb !important;
-    color: #bcc0c4 !important;
-    cursor: not-allowed;
-    opacity: 1;
+	background-color: #e4e6eb !important;
+	color: #bcc0c4 !important;
+	cursor: not-allowed;
+	opacity: 1;
 }
 
 #post_button:enabled {
-    background-color: #0866ff;
-    color: white;
-    cursor: pointer;
+	background-color: #0866ff;
+	color: white;
+	cursor: pointer;
 }
 /* Remove Bootstrap's blue focus border from the What's on your mind button */
 #my-wall button.btn,
@@ -262,48 +253,87 @@ cursor: pointer;
 #my-wall button.btn:focus,
 #my-wall button.btn:focus-visible,
 #my-wall button.btn:active {
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+	border: none !important;
 }
 
 /* Keep the button transparent */
 #my-wall button.btn {
-    background: transparent;
-    color: inherit;
+	background: transparent;
+	color: inherit;
 }
 /* Fix the Create Post modal scrollbars */
 #centerModal .modal-dialog {
-    max-width: 500px;
-    height: 470;
-    width: calc(100% - 20px);
-    margin: 10px auto;
+	max-width: 500px;
+	height: 470;
+	width: calc(100% - 20px);
+	margin: 10px auto;
 }
 
 #centerModal .modal-content {
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y:hidden;
+	max-width: 100%;
+	overflow-x: hidden;
+	overflow-y:hidden;
 }
 
 #centerModal .modal-body {
-    overflow-x: hidden;
-    overflow-y:hidden;
+	overflow-x: hidden;
+	overflow-y:hidden;
 }
 .modal-body{
-    padding: 0px 16px !important;
+	padding: 0px 16px !important;
 }
 
 #centerModal textarea {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    resize: vertical;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	resize: vertical;
+}
+.post-toast {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 99999;
+	background-color: #198754;
+	color: white;
+	padding: 12px 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+	max-width: calc(100vw - 40px);
+	opacity: 1;
+	transition: opacity 0.3s ease;
 }
 
+.post-toast.hide {
+	opacity: 0;
+}
+.post-creator-image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	flex-shrink: 0;
+}
 @media (max-height: 600px) {
-    #centerModal .modal-dialog {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+	#centerModal .modal-dialog {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+#centerModal.post-submitted .modal-content {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	display: none;
+	overflow-y: scroll;
+}
+
+/* If you also want to remove the backdrop */
+body:has(#centerModal.post-submitted) .modal-backdrop {
+	background: transparent !important;
 }

@@ -61,90 +61,57 @@
 
 	$profileName = $wallOwner["NAME"];
 	$profilePicture = $wallOwner["PROFILE_PICTURE"] ?? "";
-
-	// Handle creating a post
-	// if (
-	// 	$_SERVER["REQUEST_METHOD"] === "POST" &&
-	// 	isset($_POST["create_post"])
-	// ) {
-	// 	$postText = trim($_POST["post"] ?? "");
-
-	// 	if ($postText !== "") {
-	// 		$sql = "INSERT INTO 
-	// 					WALL(USER_ID, WALL_OWNER_ID, POST, POSTING_DATE)
-	// 				VALUES 
-	// 					(?, ?, ?, NOW())";
-
-	// 		$statement = $conn->prepare($sql);
-
-	// 		// Who wrote the post + whose profile receives it + post text
-	// 		$statement->bind_param(
-	// 			"iis",
-	// 			$loggedInId,
-	// 			$profileId,
-	// 			$postText
-	// 		);
-
-	// 		$statement->execute();
-	// 		$statement->close();
-	// 	}
-
-	// 	// Return to the same profile after posting
-	// 	header("Location: profile.php?id=" . $profileId);
-	// 	exit;
-	// }
-
- // Handle creating a post
+// Handle creating a post
 if (
-    $_SERVER["REQUEST_METHOD"] === "POST" &&
-    isset($_POST["create_post"])
+	$_SERVER["REQUEST_METHOD"] === "POST" &&
+	isset($_POST["create_post"])
 ) {
-    $postText = trim($_POST["post"] ?? "");
+	$postText = trim($_POST["post"] ?? "");
 
-    if ($postText === "") {
-        http_response_code(422);
-        header("Content-Type: application/json");
-        echo json_encode([
-            "success" => false,
-            "message" => "Please enter some text."
-        ]);
-        exit;
-    }
+	if ($postText === "") {
+		http_response_code(422);
+		header("Content-Type: application/json");
+		echo json_encode([
+			"success" => false,
+			"message" => "Please enter some text."
+		]);
+		exit;
+	}
 
-    $sql = "INSERT INTO WALL
-                (USER_ID, WALL_OWNER_ID, POST, POSTING_DATE)
-            VALUES (?, ?, ?, NOW())";
+	$sql = "INSERT INTO WALL
+				(USER_ID, WALL_OWNER_ID, POST, POSTING_DATE)
+			VALUES (?, ?, ?, NOW())";
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("iis", $loggedInId, $profileId, $postText);
+	$stmt = $conn->prepare($sql);
+	$stmt->bind_param("iis", $loggedInId, $profileId, $postText);
 
-    if (!$stmt->execute()) {
-        $stmt->close();
-        http_response_code(500);
-        header("Content-Type: application/json");
-        echo json_encode([
-            "success" => false,
-            "message" => "Failed to save the post."
-        ]);
-        exit;
-    }
+	if (!$stmt->execute()) {
+		$stmt->close();
+		http_response_code(500);
+		header("Content-Type: application/json");
+		echo json_encode([
+			"success" => false,
+			"message" => "Failed to save the post."
+		]);
+		exit;
+	}
 
-    $stmt->close();
+	$stmt->close();
 
-    if (
-        isset($_SERVER["HTTP_X_REQUESTED_WITH"]) &&
-        strtolower($_SERVER["HTTP_X_REQUESTED_WITH"]) === "xmlhttprequest"
-    ) {
-        header("Content-Type: application/json");
-        echo json_encode([
-            "success" => true,
-            "message" => "Post published successfully."
-        ]);
-        exit;
-    }
+	if (
+		isset($_SERVER["HTTP_X_REQUESTED_WITH"]) &&
+		strtolower($_SERVER["HTTP_X_REQUESTED_WITH"]) === "xmlhttprequest"
+	) {
+		header("Content-Type: application/json");
+		echo json_encode([
+			"success" => true,
+			"message" => "Post published successfully."
+		]);
+		exit;
+	}
 
-    header("Location: profile.php?id=" . $profileId);
-    exit;
+	header("Location: profile.php?id=" . $profileId);
+	exit;
 }
 
 
@@ -186,6 +153,9 @@ if (
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="/CSS/home_page.css">
 	<link rel="stylesheet" href="/CSS/profile.css">
+	<link rel="stylesheet" href="/CSS/wall.css">
+	<link rel="stylesheet" href="/CSS/my_posts.css">
+	<link rel="stylesheet" href="/CSS/navbar.css">
 	<title>Document</title>
 </head>
 <body>
@@ -202,11 +172,7 @@ if (
 			<div id="full_detaile">
 				<div id="detaile_at_center">
 					<div class="profile_img" id="pro-img">
-					<img
-							id="account_image"
-							src="../images/<?php echo htmlspecialchars($profilePicture); ?>"
-							alt="Profile picture"
-						>
+						<img id="account_image" src="../images/<?php echo htmlspecialchars($profilePicture); ?>" alt="Profile picture" >
 					</div>
 					<div class="primary-detail">
 						<div id="profile_top">
@@ -406,7 +372,7 @@ if (
 							</span>
 						</div>
 					</div>
-					<div class="your_posts">
+					<div class="your_posts" id="all_posts">
 						<?php require_once "my_posts.php" ?>  
 					</div>       
 				</div>
@@ -415,8 +381,7 @@ if (
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<script src="/JS/home_page.js"></script>
 	<script src="/JS/profile.js"></script>
+	<script src="/JS/home_page.js"></script>
 </body>
 </html>

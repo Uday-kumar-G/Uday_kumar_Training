@@ -19,7 +19,7 @@
 			</div>
 			<div id="post_detail">
 				<div id="account">
-				<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
+				
 					<?php echo "<img id='account_image' src='../images/".$profil."'alt='img loading..' > "?>
 				</div> 
 				<div>

@@ -126,7 +126,9 @@
 			</span>
 		</div>
 		<div id="my-profile">
-			<?php echo "<img id='account_image' src='../images/".$profil."'alt='img loading..' > "?>
+			<img id="account_image"
+				src="../images/<?php echo htmlspecialchars($profil, ENT_QUOTES, 'UTF-8'); ?>"
+				alt="Profile picture">
 		</div>
 		<div id="profile_card">
 			<div>
@@ -134,11 +136,11 @@
 					<a href="profile.php?id=<?php echo (int)$id; ?>">
 						<div id="profile_card_profile">
 							<div>
-								<?php echo "<img id='account_image' src='../images/".$profil."'alt='img loading..' > "?>
+								<img class="profile-card-image"
+									src="../images/<?php echo htmlspecialchars($profil, ENT_QUOTES, 'UTF-8'); ?>"
+									alt="Profile picture">
 							</div>
-							<div>
-								<?php echo htmlspecialchars($name); ?>
-							</div>
+							<div><?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></div>
 						</div>
 					</a>
 					<hr>
@@ -201,6 +203,6 @@
 		</div>
 	</div> 
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
 </div>
 

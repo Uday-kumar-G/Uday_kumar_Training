@@ -1,8 +1,9 @@
 $(document).ready(function () {
-	let items = $(".left_nav_scroll > .left_navbars");
-	let expanded = false;
+	var items = $(".left_nav_scroll > .left_navbars");
+	var expanded = false;
 	// Initially show only first 11 items
 	items.slice(11).hide();
+	$("#toggleSidebar").off("click");
 	$("#toggleSidebar").on("click", function () {
 		expanded = !expanded;
 		if (expanded) {
@@ -17,80 +18,29 @@ $(document).ready(function () {
 		}
 	});
 	// profile card
-	$("#profile_card").hide();
-	let is_clicked=false
-	$("#account_image").on("click", function(){
-		is_clicked=!is_clicked;
-		if(is_clicked){
-			$("#profile_card").show();
-		}
-		else{
-				$("#profile_card").hide();
-		}
+	// Profile card toggle
+	$(document).ready(function () {
+		var $profileCard = $("#profile_card");
+
+		$profileCard.hide();
+
+		$("#account_image").on("click", function (event) {
+			event.stopPropagation();
+			$profileCard.toggle();
+		});
+
+		$profileCard.on("click", function (event) {
+			event.stopPropagation();
+		});
+
+		$(document).on("click", function () {
+			$profileCard.hide();
+		});
 	});
 	// for backgorund img for the my account story
 	$("#my-story").css({
 		"background-image": "url('../images/<?php echo $profil; ?>')"
 	});
 	
-		$.ajax({
-		url: "fetch_posts.php",
-		type: "GET",
-		dataType: "json",
-
-		success: function (posts) {
-
-			$("#all_posts").empty();
-
-			if (posts.length === 0) {
-				$("#all_posts").text("No posts available");
-				return;
-			}
-			posts.forEach(function (post) {
-				let card = $("<div>", {
-					class: "post center-elements"
-				});
-				let top = $("<div>", {
-					class: "post_top_bar"
-				});
-				let profile = $("<img>", {
-					class: "post_profile_image",
-					src: "../images/" + post.PROFILE_PICTURE,
-					alt: "Profile"
-				});
-				let details = $("<div>", {
-					class: "posted_person_name"
-				});
-				details.append(
-					$("<strong>").text(post.NAME),
-					$("<p>").text(post.POSTING_DATE)
-				);
-				top.append(profile, details);
-				let message = $("<div>", {
-					class: "post_msg"
-				}).text(post.POST);
-				let bottom = $("<div>", {
-					class: "post_bottom"
-				});
-				bottom.append(
-					$("<button>", {
-						class: "like-btn",
-						text: "👍 Like"
-					}),
-					$("<button>", {
-						text: "💬 Comment"
-					}),
-					$("<button>", {
-						text: "↗ Share"
-					})
-				);
-				card.append(top, message, bottom);
-				$("#all_posts").append(card);
-			});
-		},
-		error: function (xhr) {
-			console.log(xhr.responseText);
-			$("#all_posts").text("Unable to load posts");
-		}
-	});
+	
 });
