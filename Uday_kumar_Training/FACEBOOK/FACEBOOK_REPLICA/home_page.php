@@ -16,14 +16,8 @@
 				W.*
 			FROM 
 				USER U
-			LEFT OUTER JOIN 
-				FRIEND F
-			ON 
-				U.USER_ID = F.USER_ID
-			LEFT OUTER JOIN 
-				WALL W
-			ON 
-				F.FRIEND_ID = W.USER_ID
+			LEFT OUTER JOIN FRIEND F ON U.USER_ID = F.USER_ID
+			LEFT OUTER JOIN WALL W ON F.FRIEND_ID = W.USER_ID
 			WHERE 
 				U.USER_ID = ?";
 	$statement = $conn->prepare($sql);
@@ -52,6 +46,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="/CSS/home_page.css">
+	<link rel="stylesheet" href="/CSS/navbar.css">
 	<title>Document</title>
 </head>
 <body>
@@ -289,12 +284,10 @@
 								<div class="porfile" >
 									<a href="profile.php?id=<?php echo (int)$id; ?>">
 										<div id="account" class="pointer">
-											<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
 											<?php echo "<img id='account_image' src='../images/".$profil."'alt='img loading..' > "?>
 										</div>
 									</a>
 								</div>
-								<!-- <a href="test_post.php"> -->
 								<div id="post-input">
 									<div>
 										<div>
@@ -305,7 +298,6 @@
 										</div>
 									</div>
 								</div>
-								<!-- </a> -->
 								<div id="live_video" class="pointer top-icon">
 									<img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/yE/r/f0XMdTi7eQy.webp">
 								</div>
@@ -319,8 +311,6 @@
 							<div id="all-story" class="center-elements">
 								<div id="my_story" class="story">
 									<div id="account">
-										<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
-										<!-- <img id="account_image" src="../images/mark_profile.jpg" alt="img loading.." >  -->
 										
 									</div>
 									<div class="x6s0dn4 x1jx94hy xvs2etk xg3wpu6 x1jwbhkm xgg4q86 x78zum5 x1vqgdyp xl56j7k x10l6tqk xcrr8yc x100vrsf" id="add_story">
@@ -341,7 +331,6 @@
 								</div>
 								<div id="friends_story_1" class="story">
 									<div id="account">
-										<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
 										<img id="account_image" src="../images/mark_profile.jpg" alt="img loading.." class="story-account"> 
 									</div>
 									<div class="story-by">
@@ -350,7 +339,6 @@
 								</div>
 								<div id="friends_story_2" class="story">
 									<div id="account">
-										<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
 										<img id="account_image" src="../images/mark_profile.jpg" alt="img loading.." class="story-account" > 
 									</div>
 									<div class="story-by">
@@ -359,7 +347,6 @@
 								</div>
 								<div id="friends_story_3" class="story">
 									<div id="account">
-										<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
 										<img id="account_image" src="../images/mark_profile.jpg" alt="img loading.." class="story-account"> 
 									</div>
 									<div class="story-by">
@@ -368,22 +355,18 @@
 								</div>
 								<div id="friends_story_4" class="story">
 									<div id="account">
-										<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
 										<img id="account_image" src="../images/mark_profile.jpg" alt="img loading.." class="story-account"> 
 									</div>  
 									<div class="story-by">
 										<span>tilak</span>
 									</div>
 								</div>
-								<!-- <div id="friends_story_5" class="story">
 
-								</div> -->
 							</div>
 							<div id="post" class="center-elements">
 								<div id="post_top_bar">
 									<div id="post_profile" class="top">
 										<div id="account">
-										<!-- <img src="/home/uday-kumar/Documents/repo/Uday_kumar_Training/FACEBOOK/images/mark_profile.jpg" alt=""> -->
 											<img id="account_image" src="../images/mark_profile.jpg" alt="img loading.." > 
 										</div> 
 									</div>

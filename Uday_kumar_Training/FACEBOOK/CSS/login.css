@@ -1,6 +1,6 @@
 * {
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 }
 
 SVG {
@@ -15,40 +15,28 @@ SVG {
 }
 
 @font-face {
-    font-family: 'Optimistic';
-    src: url('/Fonts/Optimistic-700/optimistic.ttf') format('truetype');
-    font-weight: 550;
-    font-style: normal;
+	font-family: 'Optimistic';
+	src: url('/Fonts/Optimistic-700/optimistic.ttf') format('truetype');
+	font-weight: 550;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'HelveticaCustom';
-    src: url('/Fonts/helvetica-255/Helvetica.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'HelveticaCustom';
+	src: url('/Fonts/helvetica-255/Helvetica.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
-/* @font-face {
-    font-family: 'HelveticaCustom';
-    src: url('/Fonts/helvetica-255/Helvetica-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-} */
-
-/* @font-face {
-    font-family: 'Facebook Sans';
-    src: url('/Fonts/facebook-sans/FacebookSansRegular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-} */
 
 @font-face {
-    font-family: 'Facebook Sans';
-    src: url('/Fonts/facebook-sans/FacebookSansRegular.ttf') format('truetype');
-    font-weight: bolder;
-    font-style: normal;
+	font-family: 'Facebook Sans';
+	src: url('/Fonts/facebook-sans/FacebookSansRegular.ttf') format('truetype');
+	font-weight: bolder;
+	font-style: normal;
 }
-    #header {
+
+#header {
 	min-height: 0;
 	max-width: 100%;
 	display: flex;
@@ -81,12 +69,8 @@ header div {
 	min-width: 0px;
 	display: flex;
 	flex-direction: column;
-    justify-content: center;
-    align-items: center;
-	/* flex-shrink: 0;
-	padding-bottom: 36px;
-	padding-inline: 6px;
-	padding-top: 36px; */
+	justify-content: center;
+	align-items: center;
 	position: relative;
 }
 
@@ -120,210 +104,204 @@ header img {
 	background-color: rgb(218, 221, 225);
 }
 
-
-	.mypage-body {
-		display: flex;
-		width: 100%;
-		margin-bottom: 0;
-        overflow-x: hidden;
-	}
-
-	.left-part {
-		margin-left: 40px;
-		width: 66.00%;
-		display: flex;
-		border-right: 2px solid rgb(214, 213, 213);
-	}
-
-	#left_section {
-		width: 30%;
-	}
-
-	#ll_container {
-		width: 270px;
-	}
-
-	.quotation {
-		margin-top: 173.9%;
-		width: 100%;
-		font-size: 60px;
-		font-family: 'Facebook Sans',Arial, sans-serif;
-		font-weight: 600;
-		line-height: 4.14rem;
-		position: relative;
-		z-index: 1;
-	}
-
-	.make-highlight {
-		color: #0866ff;
-	}
-
-    #left_img {
-    width: 77.8%;
-    height: auto;
-    object-fit: contain;
-
-    margin-right: 3.4%;
-    transform: translateX(-5%);
-    position: relative;
-    z-index: 1;
+.mypage-body {
+	display: flex;
+	width: 100%;
+	margin-bottom: 0;
+	overflow-x: hidden;
 }
 
-	/* #left_img {
-		margin-right: 3.5%;
-		transform: translateX(-5.0%);
-		position: relative;
-		z-index: 1;
-		
-	} */
+.left-part {
+	margin-left: 40px;
+	width: 66.00%;
+	display: flex;
+	border-right: 2px solid rgb(214, 213, 213);
+}
 
-	.login {
-		align-items: center;
-		margin-top: 12%;
-		margin-left: 5px;
-		padding: 20px;
-		text-align: center;
-		width: 34.55%;
-		margin-left:10px
-	}
-	.login p {
-		text-align: left;
-		margin-left: 3.78%;
-		margin-top:-1%;
-        font-family:Helvetica, Arial, sans-serif;
-		/* font-family: 'Optimistic', 'HelveticaCustom', Arial, sans-serif; */
-		color: #111112;
-		height:12px;
-		margin-bottom: 1%;
-		line-height: 21.9992px;
-		font-weight: bolder;
-		letter-spacing: 0.5px;
-	}
-    #login_form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-		margin-left: 3.7%;
-        /* padding: 0px 5%; */
-    }   
-    .form-ele{
-        width: 100%;
-    }
-	.name_input {
-		width: 87.29%;
-		padding: 16px 10px;
-		border: 1px solid rgb(212, 211, 211);
-		border-radius: 16px;
-		height: 26px;
-        margin-top: 1.19%;
-        /* margin-right: 50px; */
-		/* margin: 7px 10px 6px -5px; */
-		position: relative;
-	}
-    .password_input {
-		width: 87.29%;
-		padding: 16px 10px;
-		border: 1px solid rgb(212, 211, 211);
-		border-radius: 16px;
-		height: 26px;
-        margin-top: 12px;
-        display: flex;
-		/* margin: 6px 10px 6px -5px; */
-		position: relative;
-	}
-	.login-inputs {
-		width: 80%;
-        /* display: flex; */
-		position: relative;
-		height: 55px;
-		outline: none;
-		left: -14%;
-        right: auto;
-    	background: transparent;
-	}
-	.name_input label,
-	.password_input label {
-		position: absolute;
-		left: 16px;
-		top: 47.5%;
-		transform: translateY(-50%);
-		font-size: 15px;
-		font-family: 'optimistic', Arial, Helvetica;
-		color: #636363;
-		pointer-events: none;
-		transition: all 0.2s ease;
-	}
-	.login-inputs:focus + label,
-	.login-inputs:not(:placeholder-shown) + label {
-		top: -1px;
-		transform: translateY(0);
-		font-size: 14px;
-		padding-top: 2px;
-		background-color: transparent;
-		padding: 0 5px;
-		color: #636363;
-	}
-	#login_name,
-	#login_password{
-		border: none;
-		width: 80%;
-		padding: 6px 0;
-		border-radius: 8px;
-		height: 22px;
-		font-size: 16px;
-		margin: 0 0 0 16%;
-	}
-    #login_password{
-        padding-left: 1%;
-    }
-	.name_input:hover {
-		border: 1px solid black;
-	}   
-	.login-inputs::placeholder{
-		font-size: 15.5px;
-		font-family:'optimistic', Arial, Helvetica;
-		font-style: normal;
-		font-weight: 530;
-		letter-spacing: 0.3px;
-    }
-	.password_input:hover {
-		border: 1px solid black;
-	}
-    #eye{
-        /* transform: translateX(55px); */
-        
-    }
-	#login_button {
-		margin-top: 6px;
-		margin-bottom: 6px;
-		display: flex;
-		flex-direction: column;
-		max-width: 100%;
-	}
-	
-	#log_button {
-		border: none;
-		width: 91%;
-		border-radius: 30px;
-		margin: 18px 9px 0 0;
-		background-color: #0064E0;
-		color: rgb(234, 238, 238);
-		height: 44px;
-		font-size: 14.5px;
-		/* font-family: 'Facebook Sans', Arial, Helvetica, sans-serif; */
-		font-weight:600;
-        font-family: Helvetica, Arial, sans-serif;
-		/* letter-spacing: 0.2px; */
-		justify-content: center;
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-        /* padding-top: 1px; */
-	}
+#left_section {
+	width: 30%;
+}
+
+#ll_container {
+	width: 270px;
+}
+
+.quotation {
+	margin-top: 173.9%;
+	width: 100%;
+	font-size: 60px;
+	font-family: 'Facebook Sans', Arial, sans-serif;
+	font-weight: 600;
+	line-height: 4.14rem;
+	position: relative;
+	z-index: 1;
+}
+
+.make-highlight {
+	color: #0866ff;
+}
+
+#left_img {
+	width: 77.8%;
+	height: auto;
+	object-fit: contain;
+
+	margin-right: 3.4%;
+	transform: translateX(-5%);
+	position: relative;
+	z-index: 1;
+}
+
+
+.login {
+	align-items: center;
+	margin-top: 12%;
+	margin-left: 5px;
+	padding: 20px;
+	text-align: center;
+	width: 34.55%;
+	margin-left: 10px
+}
+
+.login p {
+	text-align: left;
+	margin-left: 3.78%;
+	margin-top: -1%;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #111112;
+	height: 12px;
+	margin-bottom: 1%;
+	line-height: 21.9992px;
+	font-weight: bolder;
+	letter-spacing: 0.5px;
+}
+
+#login_form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-left: 3.7%;
+}
+
+.form-ele {
+	width: 100%;
+}
+
+.name_input {
+	width: 87.29%;
+	padding: 16px 10px;
+	border: 1px solid rgb(212, 211, 211);
+	border-radius: 16px;
+	height: 26px;
+	margin-top: 1.19%;
+	position: relative;
+}
+
+.password_input {
+	width: 87.29%;
+	padding: 16px 10px;
+	border: 1px solid rgb(212, 211, 211);
+	border-radius: 16px;
+	height: 26px;
+	margin-top: 12px;
+	display: flex;
+	position: relative;
+}
+
+.login-inputs {
+	width: 80%;
+	position: relative;
+	height: 55px;
+	outline: none;
+	left: -14%;
+	right: auto;
+	background: transparent;
+}
+
+.name_input label,
+.password_input label {
+	position: absolute;
+	left: 16px;
+	top: 47.5%;
+	transform: translateY(-50%);
+	font-size: 15px;
+	font-family: 'optimistic', Arial, Helvetica;
+	color: #636363;
+	pointer-events: none;
+	transition: all 0.2s ease;
+}
+
+.login-inputs:focus+label,
+.login-inputs:not(:placeholder-shown)+label {
+	top: -1px;
+	transform: translateY(0);
+	font-size: 14px;
+	padding-top: 2px;
+	background-color: transparent;
+	padding: 0 5px;
+	color: #636363;
+}
+
+#login_name,
+#login_password {
+	border: none;
+	width: 80%;
+	padding: 6px 0;
+	border-radius: 8px;
+	height: 22px;
+	font-size: 16px;
+	margin: 0 0 0 16%;
+}
+
+#login_password {
+	padding-left: 1%;
+}
+
+.name_input:hover {
+	border: 1px solid black;
+}
+
+.login-inputs::placeholder {
+	font-size: 15.5px;
+	font-family: 'optimistic', Arial, Helvetica;
+	font-style: normal;
+	font-weight: 530;
+	letter-spacing: 0.3px;
+}
+
+.password_input:hover {
+	border: 1px solid black;
+}
+
+#login_button {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+}
+
+#log_button {
+	border: none;
+	width: 91%;
+	border-radius: 30px;
+	margin: 18px 9px 0 0;
+	background-color: #0064E0;
+	color: rgb(234, 238, 238);
+	height: 44px;
+	font-size: 14.5px;
+	font-weight: 600;
+	font-family: Helvetica, Arial, sans-serif;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
 #id_error,
 #pwd_error {
-	 margin-top: 1px;  
+	margin-top: 1px;
 }
 
 .error {
@@ -336,7 +314,6 @@ header img {
 	align-items: center;
 	position: relative;
 	flex-wrap: nowrap;
-	/* margin-inline: -2px; */
 	color: rgb(211, 17, 48);
 }
 
@@ -387,196 +364,195 @@ a {
 
 #id_error:empty,
 #pwd_error:empty {
-    display: none;
+	display: none;
 }
+
 /* Invalid email */
 .name_input.error-container,
 .password_input.error-container {
-    border: 1px solid #d31130;
+	border: 1px solid #d31130;
 }
 
 .name_input.error-container label,
 .password_input.error-container label {
-    color: #d31130;
+	color: #d31130;
 }
 
 
 /* Error messages */
 .error {
-    color: #d31130;
-    font-size: 15px;
-    text-align: left;
-    padding-left: 12px;
+	color: #d31130;
+	font-size: 15px;
+	text-align: left;
+	padding-left: 12px;
 
 }
-	.create-account-button {
-		width: 91%;
-		border: 1px solid #0064E0;
-		border-radius: 30px;
-		padding: 10px;
-		height: 44px;
-		margin: 8.45% 5.8% 10px -20px;
-		font-size: 15px;
-		color: #0064ed;
-		letter-spacing: 0.5px;
-        /* text-align: center; */
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-		/* word-spacing: -1px; */
-        letter-spacing: 0.1px;
-		background-color: white;
-        /* font-family: Helvetica, Arial,sans-serif; */
-		font-family: 'Optimistic','HelveticaCustom', Arial, Helvetica, sans-serif;
-	}
+.create-account-button {
+	width: 91%;
+	border: 1px solid #0064E0;
+	border-radius: 30px;
+	padding: 10px;
+	height: 44px;
+	margin: 8.45% 5.8% 10px -20px;
+	font-size: 15px;
+	color: #0064ed;
+	letter-spacing: 0.5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	letter-spacing: 0.1px;
+	background-color: white;
+	font-family: 'Optimistic', 'HelveticaCustom', Arial, Helvetica, sans-serif;
+}
 
-	.create-account-button:hover {
-		background-color: rgb(241, 241, 241);
+.create-account-button:hover {
+	background-color: rgb(241, 241, 241);
 
-	}
+}
 
-	.forgot-password-button {
-		letter-spacing: 0.3px;
-		border: none;
-		width: 100%;
-		border-radius: 30px;
-		padding: 15px 0;
-		font-size: 15px;
-        font-family: Helvetica, Arial,sans-serif;
-		/* font-weight: 600; */
-		color: rgb(24, 24, 24);
-		background-color: white;
-        width:91%;
-        margin-right: 8%;
-        margin-top: -2.2%;
-		/* display: block;   */
-		}
+.forgot-password-button {
+	letter-spacing: 0.3px;
+	border: none;
+	width: 100%;
+	border-radius: 30px;
+	padding: 15px 0;
+	font-size: 15px;
+	font-family: Helvetica, Arial, sans-serif;
+	color: rgb(24, 24, 24);
+	background-color: white;
+	width: 91%;
+	margin-right: 8%;
+	margin-top: -2.2%;
+}
 
-	.forgot-password-button a {
-		text-decoration: none;
-        text-align: center;
-		color: #111112;
-        font-weight: 550;
-        letter-spacing: 0.5px;
-		/* padding: 10px 0px 0px 0px; */
+.forgot-password-button a {
+	text-decoration: none;
+	text-align: center;
+	color: #111112;
+	font-weight: 550;
+	letter-spacing: 0.5px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+}
 
-		font-family:  Helvetica, Arial, sans-serif;
-		font-size: 15px;
-	}
-	.forgot-password-button:hover {
-		background-color: rgb(241, 241, 241);
-	}
+.forgot-password-button:hover {
+	background-color: rgb(241, 241, 241);
+}
 
-	#my-hr{
-		border: 1px solid rgb(228, 226, 226);
-	}
+#my-hr {
+	border: 1px solid rgb(228, 226, 226);
+}
 
 /* footer part */
-	.my-footer {
-		font-family: 'HelveticaCustom', Arial, sans-serif;
-		margin: 15px 0px 0px 20.3%;
-		align-items: center;
-		padding: 10px;
-		line-height: 32px;
-	}
+.my-footer {
+	font-family: 'HelveticaCustom', Arial, sans-serif;
+	margin: 15px 0px 0px 20.3%;
+	align-items: center;
+	padding: 10px;
+	line-height: 32px;
+}
 
-	.my-footer a {
-		text-decoration: none;
-		color: rgb(116, 114, 114);
-		font-family: 'HelveticaCustom', 'Optimistic', Arial, sans-serif;
-		font-size: 15px;
+.my-footer a {
+	text-decoration: none;
+	color: rgb(116, 114, 114);
+	font-family: 'HelveticaCustom', 'Optimistic', Arial, sans-serif;
+	font-size: 15px;
+}
 
-	}
-	.footer-languages a{
-		padding-right: 29.3px;
-		text-decoration: none;
-		color: rgb(116, 114, 114);
-		font-family: 'HelveticaCustom', 'Optimistic', Arial, sans-serif;
-		font-size: 15px;
-		line-height: 32px;
-	}
-	.footer-content a{
-		padding-right: 8.3px;
-		text-decoration: none;
-		color: rgb(116, 114, 114);
-		font-family: 'HelveticaCustom', 'Optimistic', Arial, sans-serif;
-		font-size: 15px;
-		line-height: 32px;
-	}
-	#meta {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		flex-shrink: 0;
-		max-width: 100%;
-		position: relative;
-		margin-bottom: 6px;
-		margin-right:10px
-	}
+.footer-languages a {
+	padding-right: 29.3px;
+	text-decoration: none;
+	color: rgb(116, 114, 114);
+	font-family: 'HelveticaCustom', 'Optimistic', Arial, sans-serif;
+	font-size: 15px;
+	line-height: 32px;
+}
 
-	#meta svg {
-		width: 60px;
-		height: 12px;
-	}
+.footer-content a {
+	padding-right: 8.3px;
+	text-decoration: none;
+	color: rgb(116, 114, 114);
+	font-family: 'HelveticaCustom', 'Optimistic', Arial, sans-serif;
+	font-size: 15px;
+	line-height: 32px;
+}
+
+#meta {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+	max-width: 100%;
+	position: relative;
+	margin-bottom: 6px;
+	margin-right: 10px
+}
+
+#meta svg {
+	width: 60px;
+	height: 12px;
+}
 
 @media (min-width: 1025px) {
-    #header{
-        display: none;
-    }
+	#header {
+		display: none;
+	}
 
-    #line {
-        display: none;
-    }
+	#line {
+		display: none;
+	}
 }
 
 @media (max-width: 1024px) {
 
-    .left-part {
-        display: none;
-    }
+	.left-part {
+		display: none;
+	}
 
-    .mypage-body {
-        flex-direction: column;
-        align-items: center;
-    }
+	.mypage-body {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .login {
-        width: 601.5px;
-        max-width: 100%;
-        margin: 148px auto 0;
-        padding: 0;
-        box-sizing: border-box;
+	.login {
+		width: 601.5px;
+		max-width: 100%;
+		margin: 148px auto 0;
+		padding: 0;
+		box-sizing: border-box;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 130px;
-    }
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 130px;
+	}
 
-    #login_form {
-        width: 100%;
-        margin-left: 0;
+	#login_form {
+		width: 100%;
+		margin-left: 0;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .my-footer{
-        margin-left: 6%;
-    }
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .form-ele {
-        width: 100%;
-    }
-    	#login_button {
+	.my-footer {
+		margin-left: 6%;
+	}
+
+	.form-ele {
+		width: 100%;
+	}
+
+	#login_button {
 		margin-top: 6px;
 		margin-bottom: 6px;
 		display: flex;
 		flex-direction: column;
 		max-width: 100%;
 	}
-	
+
 	#log_button {
 		border: none;
 		width: 87%;
@@ -586,66 +562,61 @@ a {
 		color: rgb(234, 238, 238);
 		height: 44px;
 		font-size: 14.5px;
-		/* font-family: 'Facebook Sans', Arial, Helvetica, sans-serif; */
-		font-weight:600;
-        font-family: Helvetica, Arial, sans-serif;
-		/* letter-spacing: 0.2px; */
+		font-weight: 600;
+		font-family: Helvetica, Arial, sans-serif;
 		justify-content: center;
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-        /* padding-top: 1px; */
 	}
 
-    .name_input,
-    .password_input {
-        width: 87.29%;
-        height: 60px;
-        box-sizing: border-box;
-    }
+	.name_input,
+	.password_input {
+		width: 87.29%;
+		height: 60px;
+		box-sizing: border-box;
+	}
 
-    .login p {
-        margin-left: 0;
-        align-self: flex-start;
-    }
+	.login p {
+		margin-left: 0;
+		align-self: flex-start;
+	}
 }
+
 @media (max-width: 666px) {
 
-    .login {
-        width: calc(100% - 16.3% - 20px);
-        margin-left: 16.3%;
-        margin-right: 20px;
-        margin-bottom: 130px;
-        box-sizing: border-box;
-    }
+	.login {
+		width: calc(100% - 16.3% - 20px);
+		margin-left: 16.3%;
+		margin-right: 20px;
+		margin-bottom: 130px;
+		box-sizing: border-box;
+	}
 
-    #login_form {
-        width: 100%;
-    }
+	#login_form {
+		width: 100%;
+	}
 
-    .name_input,
-    .password_input {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    #log_button {
+	.name_input,
+	.password_input {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	#log_button {
 		border: none;
-		width:100%;
+		width: 100%;
 		border-radius: 30px;
 		margin: 18px 9px 0 0;
 		background-color: #0064E0;
 		color: rgb(234, 238, 238);
 		height: 44px;
 		font-size: 14.5px;
-		/* font-family: 'Facebook Sans', Arial, Helvetica, sans-serif; */
-		font-weight:600;
-        font-family: Helvetica, Arial, sans-serif;
-		/* letter-spacing: 0.2px; */
+		font-weight: 600;
+		font-family: Helvetica, Arial, sans-serif;
 		justify-content: center;
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-        /* padding-top: 1px; */
 	}
-
 }

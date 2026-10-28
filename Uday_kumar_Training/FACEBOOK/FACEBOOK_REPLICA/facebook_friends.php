@@ -62,7 +62,10 @@
 				echo '
 				<div class="friend_card">
 					<div class="friend_img">
-						<img src="../images/' . $profile . '" alt="Profile picture">
+						<a class="my-friend"
+							href="profile.php?id=' . $friendId . '">
+							<img src="../images/' . $profile . '" alt="Profile picture">
+						</a>
 					</div>
 					<div class="friend-detail">
 						<div class="f_name">

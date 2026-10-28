@@ -8,7 +8,6 @@
 		header("Location: login.php");
 		exit();
 	}
-
 	// Person who is logged in
 	$loggedInId = (int) $_SESSION["id"];
 
@@ -17,39 +16,43 @@
 		? (int) $_GET["id"]
 		: $loggedInId;
 
-	// Fetch posts created by the logged-in user
+	$latestOnly = isset($_GET["latest"]) && $_GET["latest"] === "1";
+
 	$sql = "SELECT
-				W.USER_ID AS AUTHOR_ID,
-				W.WALL_OWNER_ID,
-				A.NAME AS AUTHOR_NAME,
-				A.PROFILE_PICTURE AS AUTHOR_PICTURE,
-				O.NAME AS OWNER_NAME,
-				W.POST,
-				W.POST_IMG,
-				W.POSTING_DATE,
-				W.LIKES,
-				W.POST_IMG
-			FROM 
-				WALL W
-			LEFT OUTER JOIN 
-				USER A
-    		ON 
-				A.USER_ID = W.USER_ID
-			LEFT OUTER JOIN 
-				USER O
-    		ON 
-				O.USER_ID = W.WALL_OWNER_ID
-			WHERE 
-				W.WALL_OWNER_ID = ?
-			ORDER BY 
-				W.POSTING_DATE DESC";
+			W.USER_ID AS AUTHOR_ID,
+			W.WALL_OWNER_ID,
+			A.NAME AS AUTHOR_NAME,
+			A.PROFILE_PICTURE AS AUTHOR_PICTURE,
+			O.NAME AS OWNER_NAME,
+			W.POST,
+			W.POST_IMG,
+			W.POSTING_DATE,
+			W.LIKES
+		FROM WALL W
+		LEFT OUTER JOIN USER A ON A.USER_ID = W.USER_ID
+		LEFT OUTER JOIN USER O ON O.USER_ID = W.WALL_OWNER_ID
+		WHERE 
+			W.WALL_OWNER_ID = ? AND ( W.USER_ID = ? OR W.USER_ID = ? )
+		ORDER BY W.POSTING_DATE DESC";
+
+	if ($latestOnly) {
+		$sql .= " LIMIT 1";
+	}
 
 	$statement = $conn->prepare($sql);
-	$statement->bind_param("i", $profileId);
+
+	$statement->bind_param(
+		"iii",
+		$profileId,
+		$profileId,
+		$loggedInId
+	);
+
 	$statement->execute();
 
 	$posts_result = $statement->get_result();
 ?>
+<?php if (!$latestOnly): ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,9 +60,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="/CSS/my_posts.css">
-	<!-- <link rel="stylesheet" href="home_page.css"> -->
 </head>
 <body>
+<?php endif; ?>
 	<?php if ($posts_result->num_rows > 0): ?>
 	<?php while ($post = $posts_result->fetch_assoc()): ?>
 		<div>
@@ -104,10 +107,17 @@
 						</span>
 						<p>
 							<?php
-							echo date(
-								"d M Y, h:i A",
-								strtotime($post["POSTING_DATE"])
-							);
+								date_default_timezone_set("Asia/Kolkata");
+								$postTime = strtotime($post["POSTING_DATE"]);
+								$currentTime = time();
+
+								$timeDifference = $currentTime - $postTime;
+
+								if ($timeDifference < 120 && $timeDifference >= 0) {
+									echo "Just now";
+								} else {
+									echo date("d M Y, h:i A", $postTime);
+								}
 							?>
 						</p>
 					</div>
@@ -122,9 +132,6 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div id="close" class="top-post">
-						<svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor" aria-hidden="true" class="x14rh7hd x1lliihq x1tzjh5l x1k90msu x2h7rmj x1qfuztq" style="--x-color: var(--secondary-icon);"><path d="M15.543 3.043a1 1 0 1 1 1.414 1.414L11.414 10l5.543 5.542a1 1 0 0 1-1.414 1.415L10 11.414l-5.543 5.543a1 1 0 0 1-1.414-1.415L8.586 10 3.043 4.457a1 1 0 1 1 1.414-1.414L10 8.586l5.543-5.543z"></path></svg> 
-					</div> -->
 				</div>
 				<div id="post_msg">
 					<?php
@@ -217,5 +224,7 @@
 		<p>You haven't posted anything yet.</p>
 	<?php endif; ?>
 
+<?php if (!$latestOnly): ?>
 </body>
 </html>
+<?php endif; ?>

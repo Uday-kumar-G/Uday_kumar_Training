@@ -1,83 +1,75 @@
-
 #post {
-    height: auto;
-    width: 100%;
-    margin-top: 14px;
-    /* border:1px solid #65686c; */
-    border-radius: 10px;
-    background-color: #ffffff;
+	height: auto;
+	width: 100%;
+	margin-top: 14px;
+	border-radius: 10px;
+	background-color: #ffffff;
 }
 .story-account{
-    border: 3px solid #0866ff;
-    margin: 10px 0 0 10px;
+	border: 3px solid #0866ff;
+	margin: 10px 0 0 10px;
 }
 
 #post_top_bar {
-    display: flex;
+	display: flex;
 }
 
 #posted_person_name {
-    width: 70%;
+	width: 70%;
 }
 
 #posted_person_name span {
-    font-size: 15px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #posted_person_name p {
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #dot_nav {
-    padding: 19.3px 0 0 95px;
-    color: #959494;
+	padding: 19.3px 0 0 95px;
+	color: #959494;
 }
-
-/* #close {
-    padding: 19.3px 0 0 16px;
-    color: #959494;
-} */
-
 .top-post {
-    padding: 10px;
+	padding: 10px;
 }
 
 .top-post:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 #post_msg {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    padding: 0 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 0 20px;
 }
 
 #post_image img {
-    width: 100%;
-    height: 580px;
+	width: 100%;
+	height: 580px;
 }
 
 #post_image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 20px 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 20px 0 20px;
 }
 
 #post_bottom {
-    display: flex;
-    gap: 25px;
-    width: 100%;
-    height: 44px;
-    padding: 0px 12px;
-    color: #848180;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	gap: 25px;
+	width: 100%;
+	height: 44px;
+	padding: 0px 12px;
+	color: #848180;
+	align-items: center;
+	justify-content: center;
 }
 
 #post_bottom i {
-    color: #848180;
+	color: #848180;
 }

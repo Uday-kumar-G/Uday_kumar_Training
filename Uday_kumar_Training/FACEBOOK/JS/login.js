@@ -1,9 +1,10 @@
 $(document).ready(function () {
+	$("#log_button").off("click");
 	$("#log_button").on("click", function () {
 		$("#login_form")[0].requestSubmit();
 });
+	$("#login_password").off("click");
 	$("#login_password").on('input', function() {
-		console.log("password enterd")
 		if ($(this).val().length > 0) {
 			if ($("#eye").attr("src") === "") {
 				var inp = $("#login_password");
@@ -22,9 +23,10 @@ $(document).ready(function () {
 			$("#eye").attr("src", "");
 			$("#eye").hide();
 		}
-	})
+	});
+	$("#eye-icon").off("click");
 	$("#eye-icon").on("click",function(){
-		let inp = $("#login_password");
+		var inp = $("#login_password");
 		if (inp[0].type === "password"){
 			inp[0].type="text";
 			$("#eye")[0].src = "/images/eye/eye-password-show-svgrepo-com.svg";
@@ -39,11 +41,11 @@ $(document).ready(function () {
 	if ($(this).text().trim() === "") {
 		$(this).hide();
 	}
-
+	$("#login_form").off("click");
 	$("#login_form").on("submit", function (event) {
 
-	let email = $("#login_name").val().trim();
-	let password = $("#login_password").val();
+	var email = $("#login_name").val().trim();
+	var password = $("#login_password").val();
 
 	// Check email first
 	if (email === "") {
